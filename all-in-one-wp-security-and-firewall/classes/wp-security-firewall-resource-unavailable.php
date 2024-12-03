@@ -3,6 +3,8 @@ if (!defined('ABSPATH') && !defined('AIOWPS_FIREWALL_DIR')) {
 	exit; // Exit if accessed directly.
 }
 
+if (class_exists('AIOS_Firewall_Resource_Unavailable')) return;
+
 /**
  * Defines the methods to run when firewall resources failed to load.
  */

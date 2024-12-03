@@ -5,7 +5,7 @@ Tags: security, malware scanning, two factor authentication, firewall, login sec
 Requires PHP: 5.6
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 5.3.5
+Stable tag: 5.3.6
 License: GPLv3 or later
 
 Protect your website investment with All-In-One Security (AIOS) – a comprehensive and easy to use security plugin designed especially for WordPress. Featuring login security tools, a cutting-edge firewall and much more.
@@ -211,6 +211,10 @@ Go to the settings menu after you activate the plugin and follow the instruction
 1. Features list.
 
 == Changelog ==
+
+= 5.3.6 - 3/Dec/2024 =
+
+* FIX: Resolved an issue with the AIOS_Firewall_Resource class
 
 = 5.3.5 - 24/Nov/2024 =
 
@@ -1514,4 +1518,4 @@ those who want to enable the basic firewall but do not have "AllowOverride" opti
 - First commit to the WP repository.
 
 == Upgrade Notice ==
-* 5.3.5: Improved functionality, enhanced UI, and fixed several bugs. See changelog for full details. A recommended update for all.
+* 5.3.6: Fixed a bug released in the previous version. See changelog for full details. A recommended update for all.
