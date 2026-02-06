@@ -4,8 +4,8 @@ Donate link: https://david.dw-perspective.org.uk/donate
 Tags: security, malware scanning, two factor authentication, firewall, login security
 Requires PHP: 5.6
 Requires at least: 5.0
-Tested up to: 6.8
-Stable tag: 5.4.3
+Tested up to: 6.9
+Stable tag: 5.4.6
 License: GPLv3 or later
 
 Protect your website investment with All-In-One Security (AIOS) – a comprehensive and easy to use security plugin designed especially for WordPress. Featuring login security tools, a cutting-edge firewall and much more.
@@ -244,6 +244,34 @@ Go to the settings menu after you activate the plugin and follow the instruction
 1. Features list.
 
 == Changelog ==
+
+= 5.4.6 - 27/Jan/2026 =
+
+* FIX: PHP Fatal error:  Uncaught Error: Call to a member function get_user_otp_algorithm() on null.
+* FIX: Prevent redirection to settings when AIOS is installed through the onboarding wizard of another plugin.
+
+= 5.4.5 - 05/Jan/2026 =
+
+* FEATURE: Added onboarding wizard on activation of the plugin.
+* FEATURE: Added reports function for UDC.
+* FEATURE: Added additional commands for interoperability with UDC
+* FIX: Logged in users table not correctly tracking multiple sessions.
+* FIX: Removed scrolling from the PHP Rules tab so that Internet Bot settings, WP REST API, and other options are visible.
+* FIX: Exempt UDC commands from brute force prevention.
+* FIX: Login lockout save command for UDC.
+* FIX: Update needed in spam protection command for UDC.
+* FIX: Resolved incorrectly displayed some privileges in the debugging report for database information.
+* TWEAK: Updated the rename login page URL parser to prevent a deprecated error caused by passing null to the rtrim() function.
+* TWEAK: Update scanner command to output last scan time at end of scan for UDC.
+
+= 5.4.4 - 5/Nov/2025 =
+
+* FEATURE: Added new and improved existing modules for UpdraftCentral.
+* FIX: The theme's custom 404 page does not parse and instead displays the shortcodes for wp-login.php, due to the login page having been renamed.
+* FIX: 404 detection was not working when using a custom 404 template page.
+* FIX: PHP Strict Standards warning for AIOWPSecurity_Base_Tasks::run_for_a_site()
+* FIX: Changed slider control class name from `slider` to `aiowps_slider` and updated CSS to prevent conflict with other plugins.
+* FIX: Resolved deprecated error in fputcsv() by providing the required $escape parameter when exporting CSV files.
 
 = 5.4.3 - 8/Sep/2025 =
 
@@ -1637,4 +1665,4 @@ those who want to enable the basic firewall but do not have "AllowOverride" opti
 - First commit to the WP repository.
 
 == Upgrade Notice ==
-* 5.4.3: Added the ability to enforce strong passwords along with a few bug fixes and UI changes.
+* 5.4.6: Fixes some bugs in relation to the new onboarding wizard. A recommended update for all.

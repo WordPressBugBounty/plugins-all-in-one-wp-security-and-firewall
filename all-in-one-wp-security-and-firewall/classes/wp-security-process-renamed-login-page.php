@@ -250,6 +250,8 @@ class AIOWPSecurity_Process_Renamed_Login_Page {
 
 		status_header(404);
 		$wp_query->set_404();
+		do_action('template_redirect'); // Trigger 'template_redirect' to allow third-party plugins to intercept and inject custom logic before rendering the fallback template.
+
 		$template = get_404_template();
 		if (empty($template)) $template = get_index_template();
 		$template = apply_filters('template_include', $template);
@@ -269,6 +271,9 @@ class AIOWPSecurity_Process_Renamed_Login_Page {
 		if (empty($_SERVER['REQUEST_URI'])) return false;
 	
 		$parsed_url_path = isset($_SERVER['REQUEST_URI']) ? wp_parse_url(sanitize_url(wp_unslash($_SERVER['REQUEST_URI'])), PHP_URL_PATH) : '';
+		
+		if (empty($parsed_url_path)) return false;
+		
 		$home_url_with_slug = home_url($login_slug, 'relative');
 
 		/*

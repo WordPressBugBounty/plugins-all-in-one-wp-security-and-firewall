@@ -45,8 +45,12 @@ class AIOWPSecurity_Spam_Menu extends AIOWPSecurity_Admin_Menu {
 	 * @return Void
 	 */
 	protected function render_comment_spam() {
-		global $aiowps_feature_mgr, $aio_wp_security;
-		$aio_wp_security->include_template('wp-admin/spam-prevention/comment-spam.php', false, array('aiowps_feature_mgr' => $aiowps_feature_mgr));
+		global $aio_wp_security;
+
+		$aios_commands = new AIOWPSecurity_Commands();
+		$comment_spam_data = $aios_commands->get_comment_spam_data();
+
+		$aio_wp_security->include_template('wp-admin/spam-prevention/comment-spam.php', false, $comment_spam_data);
 	}
 
 	/**
@@ -55,7 +59,11 @@ class AIOWPSecurity_Spam_Menu extends AIOWPSecurity_Admin_Menu {
 	 * @return Void
 	 */
 	protected function render_comment_spam_ip_monitoring() {
-		global $aio_wp_security, $aiowps_feature_mgr, $wpdb;
+		global $aio_wp_security, $wpdb;
+
+		$aios_commands = new AIOWPSecurity_Commands();
+		$comment_spam_data = $aios_commands->get_comment_spam_data();
+
 		include_once 'wp-security-list-comment-spammer-ip.php'; // For rendering the AIOWPSecurity_List_Table in tab2
 		$spammer_ip_list = new AIOWPSecurity_List_Comment_Spammer_IP();
 
@@ -63,8 +71,8 @@ class AIOWPSecurity_Spam_Menu extends AIOWPSecurity_Admin_Menu {
 
 		$min_block_comments = $aio_wp_security->configs->get_value('aiowps_spam_ip_min_comments_block');
 		if (!empty($min_block_comments)) {
-			$sql = $wpdb->prepare('SELECT * FROM '.AIOWPSEC_TBL_PERM_BLOCK.' WHERE block_reason=%s', 'spam');
-			$total_res = $wpdb->get_results($sql);
+			// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery -- PCP error. Ignore.
+			$total_res = $wpdb->get_results($wpdb->prepare('SELECT * FROM '.AIOWPSEC_TBL_PERM_BLOCK.' WHERE block_reason=%s', 'spam'));
 			$block_comments_output = '<div class="aio_yellow_box">';
 			if (empty($total_res)) {
 				$block_comments_output .= '<p><strong>'.esc_html__('You currently have no IP addresses permanently blocked due to spam.', 'all-in-one-wp-security-and-firewall').'</strong></p></div>';
@@ -83,9 +91,11 @@ class AIOWPSecurity_Spam_Menu extends AIOWPSecurity_Admin_Menu {
 			}
 		}
 
-		$page = $_REQUEST['page'];
-		$tab = $_REQUEST['tab'];
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- PCP warning. No nonce.
+		$page = isset($_REQUEST['page']) ? sanitize_text_field(wp_unslash($_REQUEST['page'])) : '';
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- PCP warning. No nonce.
+		$tab = isset($_REQUEST['tab']) ? sanitize_text_field(wp_unslash($_REQUEST['tab'])) : '';
 
-		$aio_wp_security->include_template('wp-admin/spam-prevention/comment-spam-ip-monitoring.php', false, array('spammer_ip_list' => $spammer_ip_list, 'aiowps_feature_mgr' => $aiowps_feature_mgr, 'block_comments_output' => $block_comments_output, 'page' => $page, 'tab' => $tab));
+		$aio_wp_security->include_template('wp-admin/spam-prevention/comment-spam-ip-monitoring.php', false, array('comment_spam_data' => $comment_spam_data, 'spammer_ip_list' => $spammer_ip_list, 'block_comments_output' => $block_comments_output, 'page' => $page, 'tab' => $tab));
 	}
 }
