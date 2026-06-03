@@ -13,7 +13,7 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_2 {
 	// protected $self_affiliate_id = null;
 
 	/**
-	 * Safely formats translatable strings to prevent errors due to mis-translations.
+	 * Safely formats translatable strings to prevent errors due to mistranslations.
 	 *
 	 * @param string $text    Translatable text with placeholders.
 	 * @param mixed  ...$args Arguments to fill placeholders.
