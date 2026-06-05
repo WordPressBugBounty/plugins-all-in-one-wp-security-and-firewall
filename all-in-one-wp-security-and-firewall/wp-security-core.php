@@ -8,7 +8,7 @@ if (!class_exists('AIO_WP_Security')) {
 
 	class AIO_WP_Security {
 
-		public $version = '5.4.8';
+		public $version = '5.4.9';
 
 		public $db_version = '2.1.4';
 
@@ -543,6 +543,8 @@ if (!class_exists('AIO_WP_Security')) {
 			// For front side force log out.
 			add_action('template_redirect', array($this, 'do_action_force_logout_check'));
 
+			add_filter('udrpc_action', array($this, 'validate_udrpc_format'), 0);
+
 			new AIOWPSecurity_General_Init_Tasks();
 			new AIOWPSecurity_Comment();
 			new AIOWPSecurity_Reporting();
@@ -708,6 +710,15 @@ if (!class_exists('AIO_WP_Security')) {
 		 */
 		public function do_action_force_logout_check() {
 			do_action('aiowps_force_logout_check');
+		}
+
+		/**
+		 * This function will die if a invalid UDRPC action is passed
+		 *
+		 * @return void
+		 */
+		public function validate_udrpc_format() {
+			if ($_POST['format'] < 2) die('Not permitted.');
 		}
 
 		/**

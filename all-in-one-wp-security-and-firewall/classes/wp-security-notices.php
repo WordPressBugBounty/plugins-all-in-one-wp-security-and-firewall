@@ -2,9 +2,9 @@
 
 if (!defined('AIO_WP_SECURITY_PATH')) die('No direct access allowed');
 
-if (!class_exists('Updraft_Notices_1_2')) require_once(AIO_WP_SECURITY_PATH.'/vendor/team-updraft/common-libs/src/updraft-notices/updraft-notices.php');
+if (!class_exists('Updraft_Notices_1_3')) require_once(AIO_WP_SECURITY_PATH.'/vendor/team-updraft/common-libs/src/updraft-notices/updraft-notices.php');
 
-class AIOWPSecurity_Notices extends Updraft_Notices_1_2 {
+class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 
 	private $initialized = false;
 
@@ -744,5 +744,13 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_2 {
 
 		global $aio_wp_security;
 		return $aio_wp_security->include_template('notices/'.$template_file, $return_instead_of_echo, $advert_information);
+	}
+
+	/**
+	 * This function will enqueue the WordPress dashboard widget styles or scripts.
+	 *
+	 * @return void
+	 */
+	protected function widget_enqueue() {
 	}
 }
