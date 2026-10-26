@@ -3,7 +3,7 @@
         'name' => 'updraftplus/all-in-one-wp-security-and-firewall',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '36bb5f28384dead98d6a7c5640bf9088ee8741ee',
+        'reference' => '6fec6e4e77b64594e2136cf86a60ff5209c1a104',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'mlocati/ip-lib' => array(
-            'pretty_version' => '1.22.0',
-            'version' => '1.22.0.0',
-            'reference' => '4e40ffd3bf9989db19403d89c4d8be44b87b8a91',
+            'pretty_version' => '1.22.1',
+            'version' => '1.22.1.0',
+            'reference' => 'f096c0e9ec8bd4691ee45394cfb77c97c6bba272',
             'type' => 'library',
             'install_path' => __DIR__ . '/../mlocati/ip-lib',
             'aliases' => array(),
@@ -49,7 +49,7 @@
         'updraftplus/all-in-one-wp-security-and-firewall' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '36bb5f28384dead98d6a7c5640bf9088ee8741ee',
+            'reference' => '6fec6e4e77b64594e2136cf86a60ff5209c1a104',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

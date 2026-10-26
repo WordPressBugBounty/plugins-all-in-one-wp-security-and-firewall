@@ -1,6 +1,7 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-if (!defined('AIO_WP_SECURITY_PATH')) die('No direct access allowed');
+if (!defined('AIO_WP_SECURITY_PATH')) exit;
 
 if (!class_exists('Updraft_Notices_1_3')) require_once(AIO_WP_SECURITY_PATH.'/vendor/team-updraft/common-libs/src/updraft-notices/updraft-notices.php');
 
@@ -102,14 +103,28 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 
 		$allowed_ip_addresses = explode("\n", $aio_wp_security->configs->get_value('aiowps_allowed_ip_addresses'));
 		$allowed_ip_addresses = array_map('trim', $allowed_ip_addresses);
-		$login_whitelist_notice_text .= '<p>' .
-			esc_html__('Whitelisted login IP address(es):', 'all-in-one-wp-security-and-firewall') . ' ' . htmlspecialchars(implode(', ', $allowed_ip_addresses)) .
-		'</p>' .
-		'<p>' .
-			esc_html__('Would you like to re-enable login whitelisting?', 'all-in-one-wp-security-and-firewall') .
-		'</p>';
+
+		$login_whitelist_notice_text .= sprintf(
+			'<p>%1$s %2$s</p><p>%3$s</p>',
+			esc_html(_n('Whitelisted login IP address:', 'Whitelisted login IP addresses:', count($allowed_ip_addresses), 'all-in-one-wp-security-and-firewall')),
+			esc_html(implode(', ', $allowed_ip_addresses)),
+			esc_html__('Would you like to re-enable login whitelisting?', 'all-in-one-wp-security-and-firewall')
+		);
+
+		$skipped_table_names = $aio_wp_security->configs->get_value('aios_innodb_skipped_tables');
+		$skipped_table_names_html = is_array($skipped_table_names) ? nl2br(esc_html(implode("\n", $skipped_table_names))) : '';
 
 		$child_notice_content = array(
+			'convert-to-innodb' => array(
+				'title'		  => esc_html__('All-In-One Security', 'all-in-one-wp-security-and-firewall'),
+				'text' 		  => '<p>'.esc_html__('We noticed that one or more of the AIOS tables on your site are not using the InnoDB engine.', 'all-in-one-wp-security-and-firewall').'</p>'.
+					'<p>'.esc_html__('We did not update the following tables automatically because they were too large (more than 10MB):', 'all-in-one-wp-security-and-firewall').'<br><strong>'.$skipped_table_names_html.'</strong></p>'.
+					/* translators: 1: Opening link tag 2: Closing link tag  */
+					'<p>'.sprintf(esc_html__('We recommend updating the AIOS tables to use InnoDB for improved performance: %1$sMySQL docs: Converting Tables to InnoDB%2$s', 'all-in-one-wp-security-and-firewall'), '<a target="_blank" rel="noopener noreferrer" href="https://dev.mysql.com/doc/refman/8.4/en/converting-tables-to-innodb.html">', '</a>').'</p>',
+				'dismiss_time' => 'dismiss_convert_to_innodb',
+				'supported_positions' => array('convert-to-innodb'),
+				'validity_function' => 'should_show_convert_to_innodb_notice',
+			),
 			// Upgrade AIOS backup to UDP backup in the 5.0.0 version
 			'automated-database-backup' => array(
 				'title'		  => esc_html__('Removed database backup feature from the All-In-One Security plugin', 'all-in-one-wp-security-and-firewall'),
@@ -137,7 +152,7 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 					esc_html__('It is important for your security to set the IP address detection settings properly.', 'all-in-one-wp-security-and-firewall') .
 					'</p>' .
 					'<p>' .
-					esc_html__('Please go to the settings and set them now.', 'all-in-one-wp-security-and-firewall') .
+					esc_html__('Go to the settings and set them now.', 'all-in-one-wp-security-and-firewall') .
 					'</p>',
 				'button_link' => add_query_arg(array(
 					'page' => 'aiowpsec_settings',
@@ -191,10 +206,10 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 					'page' => esc_html(AIOWPSEC_FIREWALL_MENU_SLUG),
 					'tab'  => 'blacklist'
 				), admin_url('admin.php')) . '#poststuff',
-				'action_button_text' => 'Turn it on',
+				'action_button_text' => esc_html__('Turn it on', 'all-in-one-wp-security-and-firewall'),
 				'button_meta' => esc_html__('Edit the settings', 'all-in-one-wp-security-and-firewall'),
 				'dismiss_time' => 'dismiss_ip_blacklist_notice',
-				'dismiss_text' => 'Keep it off',
+				'dismiss_text' => esc_html__('Keep it off', 'all-in-one-wp-security-and-firewall'),
 				'supported_positions' => array('ip-blacklist-settings-on-upgrade'),
 				'validity_function' => 'should_show_ip_blacklist_settings_on_upgrade',
 			),
@@ -214,9 +229,10 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 			),
 			'rate_plugin' => array(
 				'text' => $this->safe_sprintf(
-					/* translators: %1$s is the opening link tag to the support page, %2$s is the closing link tag */
+					/* translators: 1: opening link tag 2: closing link tag */
 					esc_html__('Hey - We noticed All-In-One Security has kept your site safe for a while.', 'all-in-one-wp-security-and-firewall')
 					. ' ' . esc_html__('If you like us, please consider leaving a positive review to spread the word.', 'all-in-one-wp-security-and-firewall')
+					/* Translators: 1: opening link tag 2: closing link tag */
 					. ' ' . esc_html__('Or if you have any issues or questions please leave us a support message %1$shere%2$s.', 'all-in-one-wp-security-and-firewall'),
 					'<a href="https://wordpress.org/support/plugin/all-in-one-wp-security-and-firewall/" target="_blank">',
 					'</a>'
@@ -224,7 +240,7 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 				 . '<br>' . esc_html__('Thank you so much!', 'all-in-one-wp-security-and-firewall')
 				 . '<br><br>- <strong>' . esc_html__('Team All-In-One Security', 'all-in-one-wp-security-and-firewall') . '</strong>',
 				'image' => 'plugin-logos/aios-icon.png',
-				'button_link' => 'https://wordpress.org/support/plugin/all-in-one-wp-security-and-firewall/reviews/?rate=5#new-post',
+				'button_link' => 'https://wordpress.org/support/plugin/all-in-one-wp-security-and-firewall/reviews/#new-post',
 				'button_meta' => 'review',
 				'dismiss_time' => 'dismiss_review_notice',
 				'supported_positions' => $this->dashboard_top,
@@ -260,6 +276,7 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 				'text' => $sale_description,
 				'text2' => esc_html__('at checkout.', 'all-in-one-wp-security-and-firewall') . ' <strong>' . esc_html__('Hurry, offer ends 2 December.', 'all-in-one-wp-security-and-firewall') . '</strong>',
 				'image' => 'notices/sale_20.png',
+				/* Translators: promo code */
 				'button_text' => sprintf(__('Save 20%% with code %s', 'all-in-one-wp-security-and-firewall'), 'blackfridaysale2025'),
 				'button_link' => add_query_arg(
 					array(
@@ -281,6 +298,25 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 		);
 
 		return array_merge($parent_notice_content, $child_notice_content);
+	}
+
+	/**
+	 * Decides whether to show the notice explaining that one of the tables wasn't updated to InnoDB due to its size.
+	 *
+	 * @global AIO_WP_Security $aio_wp_security
+	 *
+	 * @return boolean
+	 */
+	protected function should_show_convert_to_innodb_notice() {
+		global $aio_wp_security;
+
+		$skipped_tables_names = $aio_wp_security->configs->get_value('aios_innodb_skipped_tables');
+
+		if (is_array($skipped_tables_names) && !empty($skipped_tables_names)) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
@@ -610,13 +646,13 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 	 *
 	 * @return integer AIOS Plugin installation timestamp.
 	 */
-	public function get_aiowps_plugin_installed_timestamp() {
+	public function get_aios_plugin_installed_timestamp() {
 		$installed_at = @filemtime(AIO_WP_SECURITY_PATH.'/index.html'); // phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged -- ignore warning as we handle it below
 		if (false === $installed_at) {
 			global $aio_wp_security;
 			$installed_at = (int) $aio_wp_security->configs->get_value('installed-at');
 		}
-		$installed_at = apply_filters('aiowps_plugin_installed_timestamp', $installed_at);
+		$installed_at = apply_filters('aios_plugin_installed_timestamp', $installed_at);
 		return $installed_at;
 	}
 
@@ -626,10 +662,9 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 	 * @return boolean - to indicate if we should show the notice or not
 	 */
 	protected function show_rate_notice() {
-		$installed_at = $this->get_aiowps_plugin_installed_timestamp();
+		$installed_at = $this->get_aios_plugin_installed_timestamp();
 		$time_now = $this->get_time_now();
 		$installed_for = $time_now - $installed_at;
-
 		if ($installed_at && $installed_for > 28*86400) {
 			return true;
 		}
