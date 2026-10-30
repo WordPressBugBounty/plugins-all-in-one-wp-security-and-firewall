@@ -263,16 +263,13 @@ class AIOWPSecurity_Admin_Init {
 			$aio_wp_security->notices->do_notice($custom_admin_notice_id, $custom_admin_notice_id);
 		}
 
-		// Bail if the premium plugin is active and does not show ads.
-		if (AIOWPSecurity_Utility_Permissions::is_premium_installed()) return;
-
 		$installed_at = $aio_wp_security->notices->get_aios_plugin_installed_timestamp();
 		$time_now = $aio_wp_security->notices->get_time_now();
 		$installed_for = $time_now - $installed_at;
 
 		$dismissed_dash_notice_until = (int) $aio_wp_security->configs->get_value('dismissdashnotice');
 
-		if ($this->is_admin_dashboard_page() && ($installed_at && $time_now > $dismissed_dash_notice_until && $installed_for > (14 * 86400)) || (defined('AIOWPSECURITY_FORCE_DASHNOTICE') && AIOWPSECURITY_FORCE_DASHNOTICE)) {
+		if ($this->is_admin_dashboard_page() && (!AIOWPSecurity_Utility_Permissions::is_premium_installed() && $installed_at && $time_now > $dismissed_dash_notice_until && $installed_for > (14 * 86400)) || (defined('AIOWPSECURITY_FORCE_DASHNOTICE') && AIOWPSECURITY_FORCE_DASHNOTICE)) {
 			$aio_wp_security->include_template('notices/thanks-for-using-main-dash.php');
 		} elseif ($this->is_aiowps_admin_page() && $installed_at && $installed_for > 14*86400) {
 			$aio_wp_security->notices->do_notice(false, 'top');

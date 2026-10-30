@@ -205,6 +205,10 @@ class AIOWPSecurity_Commands extends Updraft_Task_Manager_Commands_1_0 {
 			$aio_wp_security->configs->set_value('php_73_eol_dismiss_forever', $time_now + (100 * 365.25 * 86400));
 		} elseif ('dismiss_convert_to_innodb' == $data['notice']) {
 			$aio_wp_security->configs->set_value('aios_innodb_skipped_tables', array());
+		} elseif ('dismiss_blackfriday26' == $data['notice']) {
+			$aio_wp_security->configs->set_value('dismiss_blackfriday26', $time_now + (100 * 365.25 * 86400));
+		} elseif ('dismiss_xsell26' == $data['notice']) {
+			$aio_wp_security->configs->set_value('dismiss_xsell26', $time_now + (100 * 365.25 * 86400));
 		} elseif ('maxmind-admin-notice' == $data['notice'] && AIOWPSecurity_Utility_Permissions::is_premium_installed()) {
 			global $aio_wp_security_premium;
 			$aio_wp_security_premium->configs->set_value('aiowps_premium_is_maxmind_notice_dismissed', '1');

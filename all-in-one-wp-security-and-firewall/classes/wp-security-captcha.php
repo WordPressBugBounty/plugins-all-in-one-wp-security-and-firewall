@@ -755,7 +755,7 @@ class AIOWPSecurity_Captcha {
 	 */
 	private function cloudflare_turnstile_verify_configuration($site_key, $secret_key) {
 		// Very loose regex check in case the Cloudflare Turnstile key format changes in future
-		if (!preg_match('/^[A-Za-z0-9]{20,100}$/', $site_key) || !preg_match('/^[A-Za-z0-9]{20,100}$/', $secret_key)) {
+		if (!preg_match('/^[A-Za-z0-9_-]{20,100}$/', $site_key) || !preg_match('/^[A-Za-z0-9_-]{20,100}$/', $secret_key)) {
 			return false;
 		}
 

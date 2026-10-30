@@ -3,7 +3,7 @@
         'name' => 'updraftplus/all-in-one-wp-security-and-firewall',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '6fec6e4e77b64594e2136cf86a60ff5209c1a104',
+        'reference' => '88d74c4edd1d17d884feaedea5a8b0349a9c75ba',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -28,15 +28,6 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'team-updraft/lib-central' => array(
-            'pretty_version' => '1.25.6',
-            'version' => '1.25.6.0',
-            'reference' => '888161bd56e469a660c1c3607d9b16d82aead64d',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../team-updraft/lib-central',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'team-updraft/lib-onboarding-wizard' => array(
             'pretty_version' => '1.0.5',
             'version' => '1.0.5.0',
@@ -49,7 +40,7 @@
         'updraftplus/all-in-one-wp-security-and-firewall' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '6fec6e4e77b64594e2136cf86a60ff5209c1a104',
+            'reference' => '88d74c4edd1d17d884feaedea5a8b0349a9c75ba',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

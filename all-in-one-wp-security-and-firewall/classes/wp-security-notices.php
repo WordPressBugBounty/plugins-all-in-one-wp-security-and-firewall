@@ -42,12 +42,6 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 		global $aio_wp_security;
 		$parent_notice_content = parent::populate_notices_content();
 
-		/* translators: 1. HTML text. 2. HTML text, 3. HTML text. */
-		$sale_description = $this->safe_sprintf(__('Get %1$s with %2$s. %3$s, downtime, and response time issues.', 'all-in-one-wp-security-and-firewall'), '<strong>' . __('added protection', 'all-in-one-wp-security-and-firewall') . '</strong>', '<strong>' . __('Premium', 'all-in-one-wp-security-and-firewall') . '</strong>', '<strong>' . __('Scan your site for malware', 'all-in-one-wp-security-and-firewall') . '</strong>');
-
-		/* translators: %s: HTML text. */
-		$sale_description .= ' ' . $this->safe_sprintf(__('Block traffic by country of origin, get advanced two-factor authentication, %s, and more.', 'all-in-one-wp-security-and-firewall'), '<strong>' . __('added protection', 'all-in-one-wp-security-and-firewall') . '</strong>', '<strong>' . __('Premium', 'all-in-one-wp-security-and-firewall') . '</strong>', '<strong>' . __('Scan your site for malware', 'all-in-one-wp-security-and-firewall') . '</strong>');
-
 		// Build text for firewall rules that have been upgraded
 		$firewall_upgrade_text = '<p>' .
 		esc_html__('The All in One Security plugin has deactivated some of the firewall settings that you had activated.', 'all-in-one-wp-security-and-firewall') .
@@ -227,6 +221,10 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 				'dismiss_text' => esc_html__('Keep it off', 'all-in-one-wp-security-and-firewall'),
 				'validity_function' => 'should_show_login_whitelist_disabled_on_upgrade_notice',
 			),
+
+		);
+
+		$promotional_notice_content = array(
 			'rate_plugin' => array(
 				'text' => $this->safe_sprintf(
 					/* translators: 1: opening link tag 2: closing link tag */
@@ -237,8 +235,8 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 					'<a href="https://wordpress.org/support/plugin/all-in-one-wp-security-and-firewall/" target="_blank">',
 					'</a>'
 				)
-				 . '<br>' . esc_html__('Thank you so much!', 'all-in-one-wp-security-and-firewall')
-				 . '<br><br>- <strong>' . esc_html__('Team All-In-One Security', 'all-in-one-wp-security-and-firewall') . '</strong>',
+				. '<br>' . esc_html__('Thank you so much!', 'all-in-one-wp-security-and-firewall')
+				. '<br><br>- <strong>' . esc_html__('Team All-In-One Security', 'all-in-one-wp-security-and-firewall') . '</strong>',
 				'image' => 'plugin-logos/aios-icon.png',
 				'button_link' => 'https://wordpress.org/support/plugin/all-in-one-wp-security-and-firewall/reviews/#new-post',
 				'button_meta' => 'review',
@@ -268,36 +266,30 @@ class AIOWPSecurity_Notices extends Updraft_Notices_1_3 {
 				'supported_positions' => $this->anywhere,
 				'validity_function' => 'wp_optimize_not_installed',
 			),
-
-			// The sale adverts content starts here
-			'blackfriday' => array(
+			'blackfriday26' => array(
 				'prefix' => '',
-				'title' => esc_html__('20% off - Black Friday Sale', 'all-in-one-wp-security-and-firewall'),
-				'text' => $sale_description,
-				'text2' => esc_html__('at checkout.', 'all-in-one-wp-security-and-firewall') . ' <strong>' . esc_html__('Hurry, offer ends 2 December.', 'all-in-one-wp-security-and-firewall') . '</strong>',
-				'image' => 'notices/sale_20.png',
-				/* Translators: promo code */
-				'button_text' => sprintf(__('Save 20%% with code %s', 'all-in-one-wp-security-and-firewall'), 'blackfridaysale2025'),
-				'button_link' => add_query_arg(
-					array(
-						'utm_source' => 'aios-plugin',
-						'utm_medium' => 'referral',
-						'utm_campaign' => 'bf25-aios-plugin-banner',
-						'utm_content' => 'bf-sale',
-						'utm_creative_format' => 'advert',
-					),
-				'https://teamupdraft.com/plugin-black-friday/?utm_source=aios-plugin&utm_medium=referral&utm_campaign=bf25-aios-plugin-banner&utm_content=bf-sale&utm_creative_format=advert'),
-				'campaign' => 'blackfriday',
+				'title' => __('75% off - Black Friday Sale', 'all-in-one-wp-security-and-firewall'),
+				'text' => __('Our biggest ever discount, exclusive for the Black Friday week - Get 75% off a whole year of AIOS Premium.', 'all-in-one-wp-security-and-firewall'),
+				'text2' => '',
+				'image' => 'notices/black_friday_75.png',
+				/* Translators: coupon code */
+				'button_text' => sprintf(__('Save 75%% with code %s', 'all-in-one-wp-security-and-firewall'), 'AIOSBF26'),
+				'button_link' => 'https://teamupdraft.com/black-friday-plugin-free-aios/?utm_source=aios-free-plugin&utm_medium=in-plugin&utm_campaign=black-friday&utm_content=aios-free-banner&code_variable=AIOSBF26',
 				'button_meta' => 'inline',
-				'dismiss_time' => 'dismiss_season',
-				// 'discount_code' => '‘bf22aiosupgrade’',
-				'valid_from' => '2025-11-14 00:00:00',
-				'valid_to' => '2025-12-02 23:59:59',
+				'dismiss_time' => 'dismiss_blackfriday26',
+				'valid_from' => '2026-11-23 00:00:00',
+				'valid_to' => '2026-11-30 23:59:59',
 				'supported_positions' => $this->dashboard_top_or_report,
-			)
+			),
 		);
+		
+		if (AIOWPSecurity_Utility_Permissions::is_premium_installed()) {
+			$promotional_notice_content = array();
+		}
 
-		return array_merge($parent_notice_content, $child_notice_content);
+		$promotional_notice_content = apply_filters('aios_promotional_notice_content', $promotional_notice_content);
+
+		return array_merge($parent_notice_content, $child_notice_content, $promotional_notice_content);
 	}
 
 	/**

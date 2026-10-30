@@ -8,7 +8,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: Team Updraft <mail@example.com>\n"
 "Last-Translator: Team Updraft <mail@example.com>\n"
-"POT-Creation-Date: 2026-10-26 12:54+0000\n"
+"POT-Creation-Date: 2026-10-30 15:08+0000\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/all-in-one-wp-security-and-firewall\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "template not found"
 msgstr ""
 
-#: dist/wp-security.php:48, dist/wp-security.php:77, dist/classes/wp-security-notices.php:119, dist/classes/commands/wp-security-firewall-commands.php:753, dist/templates/notices/firewall-installed-notice.php:3, dist/templates/notices/firewall-setup-notice.php:9, dist/templates/wp-admin/settings/general-settings.php:11
+#: dist/wp-security.php:48, dist/wp-security.php:77, dist/classes/wp-security-notices.php:113, dist/classes/commands/wp-security-firewall-commands.php:753, dist/templates/notices/firewall-installed-notice.php:3, dist/templates/notices/firewall-setup-notice.php:9, dist/templates/wp-admin/settings/general-settings.php:11
 msgid "All-In-One Security"
 msgstr ""
 
@@ -101,200 +101,200 @@ msgstr ""
 msgid "Tools"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:323, dist/templates/wp-admin/settings/advanced-settings.php:81
+#: dist/admin/wp-security-admin-init.php:320, dist/templates/wp-admin/settings/advanced-settings.php:81
 msgid "Unexpected response:"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:324
+#: dist/admin/wp-security-admin-init.php:321
 msgid "Copied"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:325
+#: dist/admin/wp-security-admin-init.php:322
 msgid "You have not yet selected a file to import."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:326, dist/templates/wp-admin/scanner/file-change-detect.php:56, dist/templates/wp-admin/scanner/file-change-detect.php:61
+#: dist/admin/wp-security-admin-init.php:323, dist/templates/wp-admin/scanner/file-change-detect.php:56, dist/templates/wp-admin/scanner/file-change-detect.php:61
 msgid "Processing..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:327
+#: dist/admin/wp-security-admin-init.php:324
 msgid "Enter a valid IP address or domain name."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:329, dist/includes/simba-tfa/includes/tfa_frontend.php:184
+#: dist/admin/wp-security-admin-init.php:326, dist/includes/simba-tfa/includes/tfa_frontend.php:184
 msgid "Saving..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:330
+#: dist/admin/wp-security-admin-init.php:327
 msgid "Deleting..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:331
+#: dist/admin/wp-security-admin-init.php:328
 msgid "Blocking..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:332
+#: dist/admin/wp-security-admin-init.php:329
 msgid "Unlocking..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:333
+#: dist/admin/wp-security-admin-init.php:330
 msgid "Clearing..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:334
+#: dist/admin/wp-security-admin-init.php:331
 msgid "Importing..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:335
+#: dist/admin/wp-security-admin-init.php:332
 msgid "Exporting..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:336
+#: dist/admin/wp-security-admin-init.php:333
 msgid "Refreshing..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:337
+#: dist/admin/wp-security-admin-init.php:334
 msgid "Scanning..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:338
+#: dist/admin/wp-security-admin-init.php:335
 msgid "Verify"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:339, dist/templates/wp-admin/settings/partials/updraft-login-form.php:32
+#: dist/admin/wp-security-admin-init.php:336, dist/templates/wp-admin/settings/partials/updraft-login-form.php:32
 msgid "Connect"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:340
+#: dist/admin/wp-security-admin-init.php:337
 msgid "Close"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:341
+#: dist/admin/wp-security-admin-init.php:338
 msgid "Completed."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:342
+#: dist/admin/wp-security-admin-init.php:339
 msgid "Refreshed."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:343
+#: dist/admin/wp-security-admin-init.php:340
 msgid "Deleted."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:344
+#: dist/admin/wp-security-admin-init.php:341
 msgid "show more"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:345
+#: dist/admin/wp-security-admin-init.php:342
 msgid "hide"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:346
+#: dist/admin/wp-security-admin-init.php:343
 msgid "But the following notices have been raised"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:347
+#: dist/admin/wp-security-admin-init.php:344
 msgid "Disabling..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:348
+#: dist/admin/wp-security-admin-init.php:345
 msgid "Setting up firewall..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:349
+#: dist/admin/wp-security-admin-init.php:346
 msgid "Downgrading firewall..."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:350, dist/admin/wp-security-dashboard-menu.php:572
+#: dist/admin/wp-security-admin-init.php:347, dist/admin/wp-security-dashboard-menu.php:572
 msgid "Maintenance mode is currently enabled."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:350, dist/admin/wp-security-dashboard-menu.php:572
+#: dist/admin/wp-security-admin-init.php:347, dist/admin/wp-security-dashboard-menu.php:572
 msgid "Remember to disable it when you are done."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:351, dist/admin/wp-security-dashboard-menu.php:574
+#: dist/admin/wp-security-admin-init.php:348, dist/admin/wp-security-dashboard-menu.php:574
 msgid "Maintenance mode is currently disabled."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:352
+#: dist/admin/wp-security-admin-init.php:349
 msgid "Scan Now"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:353
+#: dist/admin/wp-security-admin-init.php:350
 msgid "This is your first file change detection scan."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:353
+#: dist/admin/wp-security-admin-init.php:350
 msgid "The details from this scan will be used for future scans."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:354
+#: dist/admin/wp-security-admin-init.php:351
 msgid "The scan is complete - There were no file changes detected."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:355, dist/templates/wp-admin/scanner/file-change-detect.php:5
+#: dist/admin/wp-security-admin-init.php:352, dist/templates/wp-admin/scanner/file-change-detect.php:5
 msgid "The scan has detected that there was a change in your website's files."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:356
+#: dist/admin/wp-security-admin-init.php:353
 msgid "View the file scan results"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:357, dist/classes/commands/wp-security-file-scan-commands.php:252
+#: dist/admin/wp-security-admin-init.php:354, dist/classes/commands/wp-security-file-scan-commands.php:252
 msgid "View last file scan results"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:358
+#: dist/admin/wp-security-admin-init.php:355
 msgid "You must agree to the terms and conditions."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:365
+#: dist/admin/wp-security-admin-init.php:362
 msgid "year(s)"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:366
+#: dist/admin/wp-security-admin-init.php:363
 msgid "month(s)"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:367
+#: dist/admin/wp-security-admin-init.php:364
 msgid "day(s)"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:368
+#: dist/admin/wp-security-admin-init.php:365
 msgid "hour(s)"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:369
+#: dist/admin/wp-security-admin-init.php:366
 msgid "minute(s)"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:370
+#: dist/admin/wp-security-admin-init.php:367
 msgid "second(s)"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:371
+#: dist/admin/wp-security-admin-init.php:368
 msgid "centuries"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:372
+#: dist/admin/wp-security-admin-init.php:369
 msgid "less than a second"
 msgstr ""
 
 #. translators: 1: is the plugin name, 2: the star rating (HTML), 3: URL for Trustpilot, 4: URL for G2.com.
-#: dist/admin/wp-security-admin-init.php:409
+#: dist/admin/wp-security-admin-init.php:406
 msgid "Enjoyed %1$s? Please leave us a %2$s rating on %3$s or %4$s."
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:410
+#: dist/admin/wp-security-admin-init.php:407
 msgid "We really appreciate your support!"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:488, dist/admin/wp-security-admin-init.php:488, dist/classes/wp-security-two-factor-login.php:123, dist/classes/wp-security-two-factor-login.php:123
+#: dist/admin/wp-security-admin-init.php:485, dist/admin/wp-security-admin-init.php:485, dist/classes/wp-security-two-factor-login.php:123, dist/classes/wp-security-two-factor-login.php:123
 msgid "AIOS"
 msgstr ""
 
-#: dist/admin/wp-security-admin-init.php:505
+#: dist/admin/wp-security-admin-init.php:502
 msgid "Premium Upgrade"
 msgstr ""
 
@@ -302,7 +302,7 @@ msgstr ""
 msgid "Press to toggle"
 msgstr ""
 
-#: dist/admin/wp-security-admin-menu.php:161, dist/admin/wp-security-admin-menu.php:177, dist/classes/wp-security-commands.php:346, dist/classes/commands/wp-brute-force-commands.php:72, dist/classes/commands/wp-brute-force-commands.php:151, dist/classes/commands/wp-security-tools-commands.php:129
+#: dist/admin/wp-security-admin-menu.php:161, dist/admin/wp-security-admin-menu.php:177, dist/classes/wp-security-commands.php:350, dist/classes/commands/wp-brute-force-commands.php:72, dist/classes/commands/wp-brute-force-commands.php:151, dist/classes/commands/wp-security-tools-commands.php:129
 msgid "The settings have been successfully updated."
 msgstr ""
 
@@ -1407,10 +1407,6 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: dist/admin/wp-security-settings-menu.php:67
-msgid "TeamUpdraft"
-msgstr ""
-
 #: dist/admin/wp-security-spam-menu.php:19, dist/classes/grade-system/wp-security-feature-item-manager.php:920, dist/templates/wp-admin/dashboard/may-also-like.php:201
 msgid "Spam prevention"
 msgstr ""
@@ -1888,60 +1884,60 @@ msgstr ""
 msgid "Invalid IP retrieve method."
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:346
+#: dist/classes/wp-security-commands.php:350
 msgid "The settings update was unsuccessful."
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:398
+#: dist/classes/wp-security-commands.php:402
 msgid "Invalid email address."
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:407
+#: dist/classes/wp-security-commands.php:411
 msgid "The diagnostic report has been sent successfully."
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:413
+#: dist/classes/wp-security-commands.php:417
 msgid "There was an error sending the diagnostic report."
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:481
+#: dist/classes/wp-security-commands.php:485
 msgid "AIOS premium"
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:483
+#: dist/classes/wp-security-commands.php:487
 msgid "Advanced malware scanning"
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:484
+#: dist/classes/wp-security-commands.php:488
 msgid "Real-time response time monitoring"
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:485
+#: dist/classes/wp-security-commands.php:489
 msgid "Custom two-factor authentication"
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:486
+#: dist/classes/wp-security-commands.php:490
 msgid "404 error protection & bot blocking"
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:487
+#: dist/classes/wp-security-commands.php:491
 msgid "Country-based traffic blocking"
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:488
+#: dist/classes/wp-security-commands.php:492
 msgid "Country whitelist management"
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:489
+#: dist/classes/wp-security-commands.php:493
 msgid "Guaranteed premium support"
 msgstr ""
 
-#: dist/classes/wp-security-commands.php:492
+#: dist/classes/wp-security-commands.php:496
 msgid "Upgrade Now"
 msgstr ""
 
 #. translators: %d is the number of critical issues found.
-#: dist/classes/wp-security-commands.php:572
+#: dist/classes/wp-security-commands.php:576
 msgid "%d critical issue(s)"
 msgstr ""
 
@@ -2143,279 +2139,253 @@ msgstr ""
 msgid "An error occurred while rendering this notice, please enable and check your debug log."
 msgstr ""
 
-#. translators: 1. HTML text. 2. HTML text, 3. HTML text.
-#: dist/classes/wp-security-notices.php:46
-msgid "Get %1$s with %2$s. %3$s, downtime, and response time issues."
-msgstr ""
-
-#: dist/classes/wp-security-notices.php:46, dist/classes/wp-security-notices.php:49
-msgid "added protection"
-msgstr ""
-
-#: dist/classes/wp-security-notices.php:46, dist/classes/wp-security-notices.php:49, dist/admin/general/wp-security-ajax-data-table.php:578, dist/admin/general/wp-security-list-table.php:560, dist/templates/wp-admin/dashboard/may-also-like.php:24
-msgid "Premium"
-msgstr ""
-
-#: dist/classes/wp-security-notices.php:46, dist/classes/wp-security-notices.php:49
-msgid "Scan your site for malware"
-msgstr ""
-
-#. translators: %s: HTML text.
-#: dist/classes/wp-security-notices.php:49
-msgid "Block traffic by country of origin, get advanced two-factor authentication, %s, and more."
-msgstr ""
-
-#: dist/classes/wp-security-notices.php:53
+#: dist/classes/wp-security-notices.php:47
 msgid "The All in One Security plugin has deactivated some of the firewall settings that you had activated."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:56
+#: dist/classes/wp-security-notices.php:50
 msgid "We have upgraded the following settings so that they are now part of the PHP firewall instead of .htaccess directives:"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:86
+#: dist/classes/wp-security-notices.php:80
 msgid "None of the settings that have been upgraded were active."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:69
+#: dist/classes/wp-security-notices.php:63
 msgid "Completely block xmlrpc.php"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:72, dist/templates/wp-admin/firewall/partials/proxy-comment.php:10
+#: dist/classes/wp-security-notices.php:66, dist/templates/wp-admin/firewall/partials/proxy-comment.php:10
 msgid "Forbid proxy comment posting"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:75, dist/templates/wp-admin/firewall/partials/bad-query-strings.php:10
+#: dist/classes/wp-security-notices.php:69, dist/templates/wp-admin/firewall/partials/bad-query-strings.php:10
 msgid "Deny bad query strings"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:78
+#: dist/classes/wp-security-notices.php:72
 msgid "Advanced character filter"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:90
+#: dist/classes/wp-security-notices.php:84
 msgid "What would you like to do?"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:93
+#: dist/classes/wp-security-notices.php:87
 msgid "The All in One Security plugin has disabled the login whitelist setting that you have enabled in the past."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:99
+#: dist/classes/wp-security-notices.php:93
 msgid "Your website is running on a non-Apache webserver, so the login whitelisting was not functional until the recent update of AIOS (because it relied upon Apache-specific features)."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:97
+#: dist/classes/wp-security-notices.php:91
 msgid "Your website is running on an Apache webserver, the login whitelisting might not be functional until the recent update of AIOS (because it relied upon Apache-specific module features)."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:101
+#: dist/classes/wp-security-notices.php:95
 msgid "It began working with AIOS version 5.0.8."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:101
+#: dist/classes/wp-security-notices.php:95
 msgid "We have disabled it so that your login page will not be blocked unexpectedly."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:109
+#: dist/classes/wp-security-notices.php:103
 msgid "Whitelisted login IP address:"
 msgid_plural "Whitelisted login IP addresses:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dist/classes/wp-security-notices.php:111
+#: dist/classes/wp-security-notices.php:105
 msgid "Would you like to re-enable login whitelisting?"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:120
+#: dist/classes/wp-security-notices.php:114
 msgid "We noticed that one or more of the AIOS tables on your site are not using the InnoDB engine."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:121
+#: dist/classes/wp-security-notices.php:115
 msgid "We did not update the following tables automatically because they were too large (more than 10MB):"
 msgstr ""
 
 #. translators: 1: Opening link tag 2: Closing link tag
-#: dist/classes/wp-security-notices.php:123
+#: dist/classes/wp-security-notices.php:117
 msgid "We recommend updating the AIOS tables to use InnoDB for improved performance: %1$sMySQL docs: Converting Tables to InnoDB%2$s"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:130
+#: dist/classes/wp-security-notices.php:124
 msgid "Removed database backup feature from the All-In-One Security plugin"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:132
+#: dist/classes/wp-security-notices.php:126
 msgid "Beginning with version 5.0.0, AIOS has replaced the AIOS backup method with the superior UpdraftPlus method."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:133
+#: dist/classes/wp-security-notices.php:127
 msgid "It remains free and is fully supported by the UpdraftPlus team."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:136
+#: dist/classes/wp-security-notices.php:130
 msgid "You are seeing this notice because you have previously set up automated database backups in AIOS."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:137
+#: dist/classes/wp-security-notices.php:131
 msgid "Would you like to set up scheduled backups with UpdraftPlus?"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:143
+#: dist/classes/wp-security-notices.php:137
 msgid "Setup UpdraftPlus backup plugin"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:149
+#: dist/classes/wp-security-notices.php:143
 msgid "Important: set up your IP address detection settings"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:151
+#: dist/classes/wp-security-notices.php:145
 msgid "The All in One Security plugin couldn't be certain about the correct method to detect the IP address for your site visitors with your currently-configured IP address detection settings."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:152
+#: dist/classes/wp-security-notices.php:146
 msgid "It is important for your security to set the IP address detection settings properly."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:155
+#: dist/classes/wp-security-notices.php:149
 msgid "Go to the settings and set them now."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:161
+#: dist/classes/wp-security-notices.php:155
 msgid "Setup IP address detection settings"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:169
+#: dist/classes/wp-security-notices.php:163
 msgid "Failed to load the firewall resources."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:170
+#: dist/classes/wp-security-notices.php:164
 msgid "The firewall won't operate correctly."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:177
+#: dist/classes/wp-security-notices.php:171
 msgid "AIOS PHP 7.3 and below support will end soon"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:184
+#: dist/classes/wp-security-notices.php:178
 msgid "Important: Disabled firewall settings"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:190
+#: dist/classes/wp-security-notices.php:184
 msgid "Reactivate"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:191
+#: dist/classes/wp-security-notices.php:185
 msgid "Configure manually"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:194
+#: dist/classes/wp-security-notices.php:188
 msgid "Keep deactivated"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:198
+#: dist/classes/wp-security-notices.php:192
 msgid "Important: Blacklist manager disabled"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:200
+#: dist/classes/wp-security-notices.php:194
 msgid "The blacklist manager feature has been disabled to prevent any unexpected site lockouts."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:203
+#: dist/classes/wp-security-notices.php:197
 msgid "This feature will block any IP address or range listed in its settings, please double check your own details are not included before turning it back on."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:209
+#: dist/classes/wp-security-notices.php:203
 msgid "Turn it on"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:210, dist/classes/wp-security-notices.php:224
+#: dist/classes/wp-security-notices.php:204, dist/classes/wp-security-notices.php:218
 msgid "Edit the settings"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:212, dist/classes/wp-security-notices.php:227
+#: dist/classes/wp-security-notices.php:206, dist/classes/wp-security-notices.php:221
 msgid "Keep it off"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:217
+#: dist/classes/wp-security-notices.php:211
 msgid "Important: Disabled login whitelist setting"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:223
+#: dist/classes/wp-security-notices.php:217
 msgid "Turn it back on"
 msgstr ""
 
 #. translators: 1: opening link tag 2: closing link tag
-#: dist/classes/wp-security-notices.php:233
+#: dist/classes/wp-security-notices.php:231
 msgid "Hey - We noticed All-In-One Security has kept your site safe for a while."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:234
+#: dist/classes/wp-security-notices.php:232
 msgid "If you like us, please consider leaving a positive review to spread the word."
 msgstr ""
 
 #. translators: 1: opening link tag 2: closing link tag
-#: dist/classes/wp-security-notices.php:236
+#: dist/classes/wp-security-notices.php:234
 msgid "Or if you have any issues or questions please leave us a support message %1$shere%2$s."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:240
+#: dist/classes/wp-security-notices.php:238
 msgid "Thank you so much!"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:241
+#: dist/classes/wp-security-notices.php:239
 msgid "Team All-In-One Security"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:251
+#: dist/classes/wp-security-notices.php:249
 msgid "Enhance your security even more by backing up your site"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:252
+#: dist/classes/wp-security-notices.php:250
 msgid "UpdraftPlus is the world's most trusted backup plugin from the owners of All-In-One Security"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:262
+#: dist/classes/wp-security-notices.php:260
 msgid "Speed up your site"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:263
+#: dist/classes/wp-security-notices.php:261
 msgid "After you've secured your site, we recommend you install our WP-Optimize plugin to streamline it for better website performance."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:275
-msgid "20% off - Black Friday Sale"
+#: dist/classes/wp-security-notices.php:271
+msgid "75% off - Black Friday Sale"
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:277
-msgid "at checkout."
+#: dist/classes/wp-security-notices.php:272
+msgid "Our biggest ever discount, exclusive for the Black Friday week - Get 75% off a whole year of AIOS Premium."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:277
-msgid "Hurry, offer ends 2 December."
+#. translators: coupon code
+#: dist/classes/wp-security-notices.php:276
+msgid "Save 75%% with code %s"
 msgstr ""
 
-#. translators: promo code
-#: dist/classes/wp-security-notices.php:280
-msgid "Save 20%% with code %s"
-msgstr ""
-
-#: dist/classes/wp-security-notices.php:363
+#: dist/classes/wp-security-notices.php:355
 msgid "AIOS will end support for PHP 7.3 and lower on 31st May 2026."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:365
+#: dist/classes/wp-security-notices.php:357
 msgid "PHP 7.3 and below are outdated and no longer receives security updates."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:365
+#: dist/classes/wp-security-notices.php:357
 msgid "To keep things secure and compatible with modern WordPress standards, AIOS will move to a minimum requirement of PHP 7.4."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:367
+#: dist/classes/wp-security-notices.php:359
 msgid "After the 31st of May 2026, AIOS may not operate correctly on PHP versions below 7.4."
 msgstr ""
 
-#: dist/classes/wp-security-notices.php:369
+#: dist/classes/wp-security-notices.php:361
 msgid "If you require help upgrading your PHP version, please contact your hosting provider."
 msgstr ""
 
@@ -3199,6 +3169,10 @@ msgstr ""
 
 #: dist/admin/general/wp-security-ajax-data-table.php:546, dist/admin/general/wp-security-ajax-data-table.php:534, dist/admin/general/wp-security-list-table.php:528, dist/admin/general/wp-security-list-table.php:516
 msgid "Bulk actions"
+msgstr ""
+
+#: dist/admin/general/wp-security-ajax-data-table.php:578, dist/admin/general/wp-security-list-table.php:560, dist/templates/wp-admin/dashboard/may-also-like.php:24
+msgid "Premium"
 msgstr ""
 
 #. translators: 1: Opening strong tag 2: Closing strong tag

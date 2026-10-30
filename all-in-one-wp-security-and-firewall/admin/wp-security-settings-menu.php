@@ -63,11 +63,15 @@ class AIOWPSecurity_Settings_Menu extends AIOWPSecurity_Admin_Menu {
 				'render_callback' => array($this, 'render_advanced_settings'),
 				'display_condition_callback' => array('AIOWPSecurity_Utility_Permissions', 'is_main_site_and_super_admin'),
 			),
+			
+			/*
+			Hidden until TeamUpdraft.com issues long-lived site keys; the current connection tokens expire after five minutes.
 			'team-updraft' => array(
 				'title' => __('TeamUpdraft', 'all-in-one-wp-security-and-firewall'),
 				'render_callback' => array($this, 'render_team_updraft_tab'),
 				'display_condition_callback' => array('AIOWPSecurity_Utility_Permissions', 'is_main_site_and_super_admin')
 			),
+			*/
 		);
 
 		$menu_tabs = apply_filters('aios_setting_tabs', $menu_tabs);

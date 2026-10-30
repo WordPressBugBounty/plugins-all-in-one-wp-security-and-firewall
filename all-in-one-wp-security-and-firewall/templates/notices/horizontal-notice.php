@@ -17,10 +17,10 @@
 				<div class="aiowps_advert_button_container">
 					<a class="button button-primary" href="<?php echo esc_url($button_link);?>" target="_blank" onclick="jQuery(this).closest('.aiowps_ad_container').slideUp(); jQuery.post(ajaxurl, {action: 'aios_ajax', subaction: 'dismiss_notice', nonce: '<?php echo esc_js(wp_create_nonce('wp-security-ajax-nonce')); ?>', data: { notice: '<?php echo esc_js($dismiss_time);?>', dismiss_forever: '1'}});">
 						<?php esc_html_e('Leave a review', 'all-in-one-wp-security-and-firewall'); ?>
-					</a>					
+					</a>
 					<a class="aiowps_notice_link button button-secondary" href="#" onclick="jQuery(this).closest('.aiowps_ad_container').slideUp(); jQuery.post(ajaxurl, {action: 'aios_ajax', subaction: 'dismiss_notice', nonce: '<?php echo esc_js(wp_create_nonce('wp-security-ajax-nonce')); ?>', data: { notice: '<?php echo esc_js($dismiss_time);?>', dismiss_forever: '0'}});">
 						<?php esc_html_e('Maybe later', 'all-in-one-wp-security-and-firewall'); ?>
-					</a>					
+					</a>
 					<a class="aiowps_notice_link" href="#" onclick="jQuery(this).closest('.aiowps_ad_container').slideUp(); jQuery.post(ajaxurl, {action: 'aios_ajax', subaction: 'dismiss_notice', nonce: '<?php echo esc_js(wp_create_nonce('wp-security-ajax-nonce')); ?>', data: { notice: '<?php echo esc_js($dismiss_time);?>', dismiss_forever: '1'}});">
 						<?php esc_html_e('No, thanks', 'all-in-one-wp-security-and-firewall'); ?>
 					</a>

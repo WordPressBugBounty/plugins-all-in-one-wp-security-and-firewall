@@ -111,25 +111,6 @@
             "install-path": "../team-updraft/common-libs"
         },
         {
-            "name": "team-updraft/lib-central",
-            "version": "1.25.6",
-            "version_normalized": "1.25.6.0",
-            "source": {
-                "type": "git",
-                "url": "ssh://git@source.updraftplus.com:20022/team-updraft/lib-central.git",
-                "reference": "888161bd56e469a660c1c3607d9b16d82aead64d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://source.updraftplus.com/api/v4/projects/106/packages/composer/archives/team-updraft/lib-central.zip?sha=888161bd56e469a660c1c3607d9b16d82aead64d",
-                "reference": "888161bd56e469a660c1c3607d9b16d82aead64d",
-                "shasum": ""
-            },
-            "type": "library",
-            "installation-source": "dist",
-            "install-path": "../team-updraft/lib-central"
-        },
-        {
             "name": "team-updraft/lib-onboarding-wizard",
             "version": "1.0.5",
             "version_normalized": "1.0.5.0",

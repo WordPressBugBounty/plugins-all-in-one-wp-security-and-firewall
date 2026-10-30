@@ -5,7 +5,7 @@ Tags: security, malware scanning, two factor authentication, firewall, login sec
 Requires PHP: 7.4
 Requires at least: 5.3
 Tested up to: 7.1
-Stable tag: 5.5.0
+Stable tag: 5.5.1
 License: GPLv3 or later
 
 Protect your WordPress site with All-In-One Security (AIOS): easy-to-use login security, a powerful firewall, and much more.
@@ -244,6 +244,12 @@ Go to the settings menu after you activate the plugin and follow the instruction
 1. Features list.
 
 == Changelog ==
+
+= 5.5.1 - 30/Oct/2026 =
+
+* FIX: Updated Cloudflare Turnstile key check regex to allow underscores and hyphens.
+* TWEAK: Removed unused lib-central library.
+* TWEAK: Add a Black Friday promo.
 
 = 5.5.0 - 26/Oct/2026 =
 
@@ -1800,5 +1806,5 @@ those who want to enable the basic firewall but do not have "AllowOverride" opti
 - First commit to the WP repository.
 
 == Upgrade Notice ==
-* 5.5.0: Improved AIOS security, firewall logging, scanner reliability, and admin usability, with new integration and redirect options, numerous bug fixes, and updated minimum requirements of PHP 7.4 and WordPress 5.3.
+* 5.5.1: Updated Cloudflare Turnstile key check regex to allow underscores and hyphens.
 
